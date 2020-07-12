@@ -1,0 +1,119 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Tweet Sentiment Analyser</title>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css')}}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.css')}}">
+
+<!-- MAIN CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/tooplate-style.css') }}">
+<style>
+footer{
+      padding: 10px 0;
+      background-color: #101010; 
+      color:#9d9d9d; 
+      bottom: 0; 
+      width: 100%; 
+     }
+</style>
+</head>
+<body class="body1">
+
+<!-- PRE LOADER -->
+<div class="preloader">
+     <div class="spinner">
+          <span class="sk-inner-circle"></span>
+     </div>
+</div>
+
+
+<!-- MENU -->
+<div class="navbar custom-navbar navbar-fixed-top" role="navigation">
+     <div class="container">
+
+          <!-- NAVBAR HEADER -->
+          <div class="navbar-header">
+               <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+               </button>
+               <!-- lOGO -->
+               <a href="index.html" class="navbar-brand"></a>
+          </div>
+
+          <!-- MENU LINKS -->
+          <div class="collapse navbar-collapse">
+               <ul class="nav navbar-nav navbar-right">
+                
+                    <li><a href="http://localhost:5000/" class="smoothScroll"><span class="glyphicon glyphicon-home"></span> HOME</a></li>
+                   
+               </ul>
+          </div>
+
+     </div>
+</div>
+<!-- HOME -->
+<section id="home" class="parallax-section">
+     <div class="overlay"></div>
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-8 col-sm-12">
+                    <div class="home-text">
+                         <h1><b><i>twitter</i></b></h1>
+                         <p>It's what's happening</p>
+                         
+                           <p>  <h1 style="color:rgba(129, 162, 213, 1)"><b>The entered Tweet analysis is:</b></h1>                    
+                                 {% if prediction == 0%}
+                            	<h1 style="color:red;"><span></span>☹️ Negative</h1>
+                            	{% elif prediction == 1%}
+                            	<h1 style="color:blue;">😃 Positive</h1>
+                            	{% elif prediction == 2%}
+                            	<h1 style="color:blue;">😐 Neutral</h1>
+                            	{% endif %}
+                   	    </p>
+
+     <!-- Video -->
+     <video controls autoplay loops>
+     <source src="{{ url_for('static', filename='videos/Twitter.mp4')}}" type="video/mp4">
+          Your browser does not support the video tag.
+     </video>
+</section>
+
+<!-- SCRIPTS -->
+<script src="{{ url_for('static', filename='js/jquery.js')}}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/jquery.parallax.js')}}"></script>
+<script src="{{ url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/magnific-popup-options.js')}}"></script>
+<script src="{{ url_for('static', filename='js/modernizr.custom.js')}}"></script>
+<script src="{{ url_for('static', filename='js/smoothscroll.js')}}"></script>
+<script src="{{ url_for('static', filename='js/custom.js')}}"></script>
+<footer>
+            <div class="container">
+                <center>
+                    <p>
+                       “Copyright © Lifestyle Store. All Rights Reserved” ​and ​“Contact Us: +91 90000 00000”   
+                    </p>  
+                </center>
+            </div>
+</footer>
+</body>
+</html>
